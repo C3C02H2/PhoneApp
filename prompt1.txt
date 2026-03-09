@@ -1,0 +1,58 @@
+Искам да проектираш архитектура за мобилно приложение.
+
+Концепция на приложението:
+Минималистично мотивационно приложение с психологически вход. Първият екран показва въпрос "Do you try?" с два бутона Yes / No. Ако потребителят избере Yes, той може да продължи към регистрация или вход. След логин приложението предоставя минималистичен блог, дневен check-in "Did you try today?" и streak система.
+
+Основни функции:
+- регистрация
+- login
+- user profile
+- blog posts
+- daily check-in
+- streak tracking
+- създаване на постове
+- feed с постове
+
+Технологии:
+Frontend:
+React Native + Expo + TypeScript
+
+Backend:
+Python + FastAPI
+
+Database:
+PostgreSQL (локална)
+
+Auth:
+JWT authentication
+
+Задача:
+Опиши пълната архитектура на системата:
+
+1. Backend архитектура
+- папки
+- modules
+- services
+- routes
+
+2. Frontend архитектура
+- папки
+- navigation
+- state management
+
+3. Database структура
+- основни таблици
+- връзки между тях
+
+4. Data flow
+- как frontend комуникира с backend
+
+5. Security basics
+- authentication flow
+- token storage
+
+6. Development workflow
+- как да се разработва локално
+- как backend и frontend се свързват
+
+Искам ясна архитектура, която може да се разширява.

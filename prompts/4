@@ -1,0 +1,45 @@
+Искам да имплементирам основния daily check-in engine за DoYouTry.
+
+Основен flow:
+- На Home screen потребителят вижда въпроса: “Did you try today?”
+- Има бутони Yes и No
+- Само един check-in на ден
+- След Yes се отваря форма за контекст
+- След No се отваря форма за excuse / reason
+- Всичко се записва към конкретна дата според timezone на потребителя
+- Показват се:
+  - current streak
+  - longest streak
+  - total check-ins
+  - last check-in date
+  - success rate
+
+Искам логиката да покрива:
+1. Само 1 check-in на ден
+2. Streak calculation
+3. Break на streak при пропуснат ден
+4. History by calendar date
+5. Anti-cheat logic:
+   - няма backdating
+   - няма second check-in за същия ден
+   - edit rules да са ограничени или забранени
+6. Start small mode:
+   - потребителят може да дефинира “trying means at least 5 minutes”
+7. Hard mode:
+   - по-строги reminder и wording rules
+8. Brand voice messages:
+   - yes success messages
+   - no failure / hard-truth messages
+   - missed-day messages
+
+Искам:
+- backend endpoints
+- business logic services
+- database updates
+- frontend Home screen
+- check-in modal/form
+- error states
+- streak cards / counters
+- reusable components
+
+Направи имплементацията стабилна, ясна и лесна за разширяване.

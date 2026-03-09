@@ -1,0 +1,53 @@
+Искам да създадеш database schema за мотивационно мобилно приложение.
+
+Database:
+PostgreSQL
+
+Основни функции на приложението:
+- регистрация
+- login
+- потребителски профил
+- блог постове
+- дневен check-in
+- streak tracking
+
+Създай SQL schema за следните таблици:
+
+Users
+- id
+- username
+- email
+- hashed_password
+- created_at
+
+Posts
+- id
+- title
+- content
+- author_id
+- created_at
+
+DailyCheckins
+- id
+- user_id
+- date
+- answer (yes/no)
+- created_at
+
+Допълнителни изисквания:
+
+1. Foreign keys
+2. Indexes за performance
+3. Constraints
+4. уникален email
+5. уникален username
+6. cascade rules
+
+Добави:
+
+- SQL CREATE TABLE statements
+- примерни seed данни
+- примерни queries за:
+  - създаване на пост
+  - check-in
+  - изчисляване на streak

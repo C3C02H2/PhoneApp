@@ -1,0 +1,41 @@
+Искам да разширим мобилното ми приложение DoYouTry. То е приложение за себемотивация и лична отчетност с тъмен минималистичен premium дизайн.
+
+Основна концепция:
+- Всеки ден приложението пита: “Did you try today?”
+- Потребителят отговаря с Yes или No
+- Ако отговори No, приложението може да показва твърди, директни съобщения
+- Ако отговори Yes, се записва check-in и може да добавя контекст
+
+Искам да внедрим следните функционалности:
+1. Контекст към отговора (какво опита днес, по коя цел, колко време)
+2. Цели / focus areas
+3. Daily note / микро journal
+4. Календар с история на check-in-ите
+5. Нива и achievements
+6. Причина при No (excuse system)
+7. Reminder система
+8. Персонален onboarding
+9. По-богат профил
+10. Follow / accountability система
+11. Weekly summary
+12. Mood / energy tracking
+13. Minimal hard-truth messages
+14. Private mode и anonymous posting
+15. По-качествен и структуриран feed
+16. Anti-cheat logic
+17. Start small mode
+18. Dashboard със статистики
+19. Тематични общности
+20. По-силен brand voice
+
+Искам първо да направиш следното:
+- анализирай всички тези features
+- групирай ги на модули
+- предложи clean architecture за mobile app + backend + database
+- предложи database entities и връзките между тях
+- предложи поетапен roadmap: MVP, V2, V3
+- посочи dependencies между модулите
+- не пиши code още
+- дай ми конкретен implementation plan по стъпки
+
+Изходът да бъде структуриран, practical и ориентиран към реална разработка.

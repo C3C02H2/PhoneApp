@@ -1,0 +1,34 @@
+Искам да имплементирам authentication и onboarding flow за приложението DoYouTry.
+
+Функционалности:
+- регистрация с username, email, password
+- login
+- forgot password / reset by email
+- token-based authentication
+- secure password hashing
+- logout
+- protected routes / screens
+- onboarding след регистрация
+
+Onboarding flow трябва да включва:
+1. Какво се опитваш да подобриш?
+2. Защо е важно за теб?
+3. Кое най-често те спира?
+4. Избор на 1 до 3 focus areas
+5. Избор на preferred reminder hour
+6. Избор дали профилът да е public или private
+7. Избор дали да използва start small mode
+8. Избор на tone mode, ако приложението има различни текстови стилове
+
+Искам:
+- backend endpoints за auth и onboarding
+- validation rules
+- error handling
+- secure token handling
+- password reset flow
+- mobile frontend screens за register/login/forgot password/onboarding
+- state management за authentication
+- navigation logic след успешен login или onboarding completion
+
+Направи го clean, secure и готово за production.
+Ако липсва част от структурата, създай я.

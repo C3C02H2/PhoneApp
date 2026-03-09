@@ -1,0 +1,684 @@
+================================================================================
+                        DoYouTry — UI/UX Design Brief
+                          Версия 3.0.0 | Март 2026
+================================================================================
+
+ОБЩО ОПИСАНИЕ
+─────────────
+DoYouTry е мотивационно мобилно приложение, което задава един прост въпрос
+всеки ден: "Did you try today?" Потребителят отговаря с "Yes" или "Not yet",
+като записва контекст (какво е опитал, продължителност, настроение) или
+причина за пропуск. Приложението следи streak-ове, achievements, седмични
+обзори и има social feed за споделяне на истории.
+
+ДИЗАЙН СТИЛ
+─────────────
+- Dark premium тема
+- Минималистичен, без емотикони
+- Инспирация: Notion, Linear, Apple Human Interface
+- Clean typography, много whitespace
+- Меки цветове, без агресивни контрасти
+
+ЦВЕТОВА ПАЛИТРА
+─────────────────
+Фонове:
+  - Primary:    #0A0A0F   (основен фон, дълбоко тъмно)
+  - Secondary:  #12121A   (карти, секции)
+  - Tertiary:   #1A1A25   (hover, elevated)
+  - Elevated:   #22222F   (издигнат елемент)
+
+Текст:
+  - Main:       #FFFFFF   (основен текст)
+  - Light:      #F5F5F7   (лек вариант)
+  - Muted:      #A0A0B0   (вторичен текст)
+  - Disabled:   #555566   (disabled/placeholder)
+
+Акцент:
+  - Accent:     #6C63FF   (soft indigo/violet — основен акцент)
+  - Glow:       rgba(108, 99, 255, 0.15)
+
+Функционални:
+  - Success:    #34D399   (зелен — streak, positive check-in)
+  - Error:      #F87171   (червен — пропуск, грешка)
+  - Warning:    #FBBF24   (жълт — предупреждение)
+
+Бордери:
+  - Subtle:     rgba(255, 255, 255, 0.06)
+  - Light:      rgba(255, 255, 255, 0.10)
+  - Medium:     rgba(255, 255, 255, 0.15)
+
+
+================================================================================
+                         ОПИСАНИЕ НА ЕКРАНИТЕ
+================================================================================
+
+
+────────────────────────────────────────────────────────────────────────────────
+ЕКРАН 1: WELCOME SCREEN
+────────────────────────────────────────────────────────────────────────────────
+Цел: Първият екран, който потребителят вижда. Задава тона на приложението.
+
+Елементи:
+  - Голям въпросителен знак "?" (декоративен, muted)
+  - Текст: "Do you try?" (h1, бял)
+  - Два бутона:
+    * "Yes" — accent цвят (#6C63FF), навежда към Login
+    * "No" — прозрачен с border, при натискане показва текст
+      "You already failed." с fade-in анимация (error цвят)
+
+Layout: Всичко центрирано вертикално и хоризонтално.
+Фон: #0A0A0F
+
+
+────────────────────────────────────────────────────────────────────────────────
+ЕКРАН 2: LOGIN SCREEN
+────────────────────────────────────────────────────────────────────────────────
+Цел: Вход в акаунта.
+
+Елементи:
+  - Заглавие: "Welcome back" (h1)
+  - Подзаглавие: "Sign in to continue your journey" (muted)
+  - Email поле (TextInputField)
+  - Password поле (TextInputField, secure)
+  - Бутон "Sign In" (PrimaryButton, accent)
+  - Линк "Forgot password?" (muted текст, tap → ForgotPassword)
+  - Footer: "Don't have an account? Sign Up" (линк → Register)
+
+Layout: Хедър отгоре, форма в средата, footer долу.
+Фон: #0A0A0F
+
+
+────────────────────────────────────────────────────────────────────────────────
+ЕКРАН 3: REGISTER SCREEN
+────────────────────────────────────────────────────────────────────────────────
+Цел: Създаване на нов акаунт.
+
+Елементи:
+  - Заглавие: "Start your journey" (h1)
+  - Подзаглавие: "Create an account to begin" (muted)
+  - Username поле
+  - Email поле
+  - Password поле
+  - Бутон "Create Account" (PrimaryButton, accent)
+  - Footer: "Already have an account? Sign In" (линк → Login)
+
+Layout: Идентичен на Login — хедър, форма, footer.
+Фон: #0A0A0F
+
+
+────────────────────────────────────────────────────────────────────────────────
+ЕКРАН 4: FORGOT PASSWORD SCREEN
+────────────────────────────────────────────────────────────────────────────────
+Цел: Възстановяване на парола (два стъпки).
+
+Стъпка 1:
+  - Заглавие: "Reset Password"
+  - Подзаглавие: "Enter your email to receive a reset code"
+  - Email поле
+  - Бутон "Send Code"
+
+Стъпка 2:
+  - Подзаглавие: "Enter the code sent to your email"
+  - Reset Code поле (6 цифри)
+  - New Password поле
+  - Бутон "Reset Password"
+
+Layout: Хедър + форма, стъпките се сменят динамично.
+Фон: #0A0A0F
+
+
+────────────────────────────────────────────────────────────────────────────────
+ЕКРАН 5: HOME SCREEN (Главен екран)
+────────────────────────────────────────────────────────────────────────────────
+Цел: Ежедневен check-in — сърцето на приложението.
+
+Елементи:
+  Горна част:
+    - Поздрав: "Good [morning/afternoon/evening]," (muted)
+    - Username (h2, бял)
+
+  Средна част — Question Card:
+    - Етикет "TODAY'S QUESTION" (малък, disabled цвят, uppercase)
+    - Карта с тъмен фон (#12121A), subtle border
+    - Текст: "Did you try today?" (h2, бял, центриран)
+    - Два бутона:
+      * "Yes, I tried" — зелен (#34D399) с glow
+      * "Not yet" — прозрачен с border
+    - АКО вече е check-in-нато: показва badge "You've checked in today"
+      с accent glow фон и кратко мотивационно съобщение
+
+  Долна част — Stats Grid (2x2):
+    - StatCard "Streak" — текуща серия (success зелен)
+    - StatCard "Total" — общо check-in-ове (accent)
+    - StatCard "Best" — най-дълъг streak (warning жълт)
+    - StatCard "Rate" — процент success (зелен ако >=70%, червен иначе)
+    Всеки StatCard: стойност (голям шрифт), заглавие, подзаглавие, цветна
+    лента отгоре
+
+  Най-долу:
+    - Мотивационен цитат (italic, muted)
+
+  МОДАЛ "Yes, I tried":
+    - Overlay: тъмен (#0A0A0F, 95% opacity)
+    - Заглавие: "Great job! Tell us more."
+    - Goal chips — избор на фокус област (хоризонтален scroll)
+    - "What did you try?" — textarea
+    - Duration chips: "15 min", "30 min", "1h", "2h+"
+    - Mood chips: "great", "good", "neutral", "low", "bad"
+    - Energy: числа 1-5 в chips
+    - Note textarea
+    - "Next step" input
+    - Бутони: "Save" (accent), "Skip" (muted), Cancel (X горе)
+
+  МОДАЛ "Not yet":
+    - Overlay: тъмен
+    - Заглавие: "What held you back?"
+    - Excuse categories — списък с TouchableOpacity елементи:
+      * "No time", "Too tired", "Forgot", "Not motivated",
+        "Got distracted", "Other"
+    - Ако "Other" — допълнително текстово поле
+    - Бутони: "Submit", "Cancel"
+
+Layout: ScrollView, pull-to-refresh.
+Фон: #0A0A0F
+
+
+────────────────────────────────────────────────────────────────────────────────
+ЕКРАН 6: FEED SCREEN
+────────────────────────────────────────────────────────────────────────────────
+Цел: Social feed — преглед и търсене на постове и потребители.
+
+Елементи:
+  Горна част:
+    - Заглавие "Feed" (h1)
+    - Подзаглавие "Stories from the community" (muted)
+    - Бутон за търсене (иконка)
+    - Search bar (показва се при tap): TextInput + clear бутон (X)
+
+  Филтри (хоризонтален ред от chips):
+    Ред 1 — Sort: "Recent", "Most Liked", "Most Useful", "Following"
+    Ред 2 — Category: "All", "Builders", "Fitness", "Study",
+             "Discipline", "Creators"
+
+  Списък от PostCard-ове (FlatList):
+    Всеки PostCard:
+      - Avatar кръг (първа буква или "A" за anonymous)
+      - Username + дата (timeAgo формат)
+      - Category badge (ако има) — accent glow фон
+      - Prompt tag (ако има) — italic, muted
+      - Заглавие на поста (h3, бял)
+      - Footer разделен с линия:
+        * Ляво: heart icon + likes count (червен ако liked)
+        * Дясно: views count + comments count
+      - Delete бутон (X) за собствени постове
+
+  При търсене:
+    - Резултати са UserCard-ове: avatar, username, joined дата
+    - Tap → UserProfile
+
+  Empty state:
+    - Текст "No posts yet. Be the first to share."
+
+Layout: FlatList с pull-to-refresh, хедър като ListHeaderComponent.
+Фон: #0A0A0F
+
+
+────────────────────────────────────────────────────────────────────────────────
+ЕКРАН 7: CREATE POST SCREEN
+────────────────────────────────────────────────────────────────────────────────
+Цел: Създаване на нов пост.
+
+Елементи:
+  Горна част:
+    - Заглавие "Share your story" (h1)
+    - Подзаглавие "Inspire others with your journey" (muted)
+
+  Промптове (хоризонтален scroll):
+    - Етикет "START WITH A PROMPT" (uppercase, малък)
+    - Chips: "What did you try today?", "What did you fail at today?",
+      "What will you do tomorrow?", "What is holding you back?",
+      "What small win did you have?"
+    - Tap → автоматично попълва Title
+
+  Community (wrap chips):
+    - Етикет "COMMUNITY" (uppercase)
+    - Chips: "General", "Builders", "Fitness", "Study",
+      "Discipline", "Creators"
+
+  Форма:
+    - Title поле (max 200 символа)
+    - Content textarea (multiline, min 160px височина, max 5000)
+    - Character count: "X / 5000"
+    - Anonymous toggle (custom switch + етикет "Post anonymously")
+    - Бутон "Publish" (PrimaryButton, accent)
+
+Layout: ScrollView, KeyboardAvoidingView.
+Фон: #0A0A0F
+
+
+────────────────────────────────────────────────────────────────────────────────
+ЕКРАН 8: POST DETAIL SCREEN
+────────────────────────────────────────────────────────────────────────────────
+Цел: Преглед на пълен пост с коментари.
+
+Елементи:
+  Горна част:
+    - Author ред: avatar, username (или "Anonymous"), дата, Delete (X)
+    - Заглавие (h2)
+    - Разделител (линия)
+    - Пълно съдържание (body text)
+
+  Stats bar:
+    - Heart icon + likes count (tap → toggle like)
+    - Views count
+    - Comments count
+
+  Коментари:
+    - Секция "Comments" заглавие
+    - Списък от CommentItem-ове:
+      * Avatar, username, дата
+      * Текст на коментара
+      * Reply бутон
+
+  Comment Input (fixed в долната част):
+    - Reply indicator (ако се отговаря на коментар)
+    - TextInput + Send бутон
+
+Layout: ScrollView + fixed input долу.
+Фон: #0A0A0F
+
+
+────────────────────────────────────────────────────────────────────────────────
+ЕКРАН 9: USER PROFILE SCREEN (Чужд профил)
+────────────────────────────────────────────────────────────────────────────────
+Цел: Преглед на профил на друг потребител.
+
+Елементи:
+  - Голям avatar кръг (буква, accent glow border)
+  - Username (h2)
+  - "Joined [дата]" (caption, disabled)
+  - Followers / Following ред (разделени с вертикална линия)
+  - Бутони (ако не е собствен профил):
+    * Follow / Unfollow (accent или outline)
+    * Block / Unblock (error цвят)
+  - 2 StatCards: Posts count + Total Likes received
+  - Info card: Status "Active Tryer" (зелена точка + текст)
+
+Layout: ScrollView, pull-to-refresh.
+Фон: #0A0A0F
+
+
+────────────────────────────────────────────────────────────────────────────────
+ЕКРАН 10: PROFILE SCREEN (Собствен профил)
+────────────────────────────────────────────────────────────────────────────────
+Цел: Преглед на собствения профил, навигация към подстраници.
+
+Елементи:
+  Горна част:
+    - Заглавие "Profile" (h1)
+    - Голям avatar кръг (80px, accent border)
+    - Username (h2)
+    - Email (muted)
+    - "Joined [дата]" (caption)
+    - Followers / Following ред
+
+  Stats Grid (3 реда x 2 колони):
+    - Streak (success зелен)
+    - Total check-ins (accent)
+    - Best streak (warning жълт)
+    - Success Rate (зелен/червен)
+    - Posts count (warning)
+    - Likes received (error)
+
+  Info Cards:
+    - Status: "Active Tryer" (зелена точка)
+    - Today: "Checked in" или "Not yet"
+
+  Меню (списък от карти с arrow):
+    - Dashboard & Stats →
+    - Weekly Summary →
+    - Calendar →
+    - Focus Areas →
+    - Settings →
+
+  Бутон "Logout" (danger variant, червен)
+
+Layout: ScrollView, pull-to-refresh.
+Фон: #0A0A0F
+
+
+────────────────────────────────────────────────────────────────────────────────
+ЕКРАН 11: GOALS SCREEN (Focus Areas)
+────────────────────────────────────────────────────────────────────────────────
+Цел: Управление на лични фокус области / цели.
+
+Елементи:
+  Горна част:
+    - Заглавие "Focus Areas" (h1)
+    - Подзаглавие "What are you working on?" (muted)
+
+  Списък от Goal Cards:
+    - Цветна точка (от избрания цвят)
+    - Title (label, бял)
+    - Description (caption, muted)
+    - Бутони: "Archive" (muted), "Delete" (error)
+
+  Archived секция:
+    - Етикет "ARCHIVED" (uppercase, disabled)
+    - Inactive goal cards с бутон "Restore"
+
+  Форма за добавяне (показва се при tap на "Add focus area"):
+    - Title input
+    - Description input
+    - Color swatches (6 цветни кръгчета): #6C63FF, #34D399,
+      #FBBF24, #F87171, #8B83FF, #A0A0B0
+    - Бутони: "Create" (accent), "Cancel" (muted)
+
+  Empty state: "No focus areas yet. Add one to get started."
+
+Layout: ScrollView.
+Фон: #0A0A0F
+
+
+────────────────────────────────────────────────────────────────────────────────
+ЕКРАН 12: CALENDAR SCREEN
+────────────────────────────────────────────────────────────────────────────────
+Цел: Месечен преглед на check-in историята.
+
+Елементи:
+  - Заглавие "Calendar" (h1)
+  - Навигация: < [Month Year] >
+  - Weekday ред: Mon Tue Wed Thu Fri Sat Sun
+  - Grid от дни (7 колони):
+    * Зелен (#34D399) = Yes day
+    * Червен (#F87171) = No day
+    * Празен/прозрачен = Missed day
+    * Днешният ден има accent border (#6C63FF)
+  - Легенда:
+    * Зелена точка = Yes (X)
+    * Червена точка = No (X)
+    * Празна точка с border = Missed
+
+Layout: ScrollView.
+Фон: #0A0A0F
+
+
+────────────────────────────────────────────────────────────────────────────────
+ЕКРАН 13: DASHBOARD SCREEN
+────────────────────────────────────────────────────────────────────────────────
+Цел: Пълна статистика и achievements.
+
+Елементи:
+  Горна част:
+    - Заглавие "Dashboard" (h1)
+
+  Stats Grid (2x2):
+    - Streak (success зелен)
+    - Best (warning жълт)
+    - Total (accent)
+    - Rate % (зелен/червен)
+
+  Consistency секция:
+    - Заглавие "Consistency"
+    - Две карти:
+      * "X/7 — Last 7 days" (accent стойност)
+      * "X/30 — Last 30 days" (accent стойност)
+
+  Top Excuses секция:
+    - Заглавие "Top Excuses"
+    - Номериран списък: 1. Category — Xx (error цвят за count)
+
+  Mood Patterns секция:
+    - Заглавие "Mood Patterns"
+    - Chips: mood name + count (accent цвят за count)
+
+  Achievements секция:
+    - Заглавие "Achievements (X/12)"
+    - Unlocked карти: иконка кръг (accent glow), title, description
+    - Locked карти: opacity 0.5, "?" иконка, title, description
+
+  Пълен списък achievements:
+    1. "First Step" — Complete your first check-in
+    2. "3 Day Streak" — 3 consecutive days of trying
+    3. "Week Warrior" — 7 consecutive days
+    4. "Two Week Force" — 14 days without stopping
+    5. "Monthly Master" — 30 days of pure effort
+    6. "Centurion" — 100 consecutive days
+    7. "Getting Started" — 10 total check-ins
+    8. "Dedicated" — 50 total check-ins
+    9. "One Hundred" — 100 total check-ins
+    10. "Voice Found" — Publish your first post
+    11. "Engaged" — Leave your first comment
+    12. "Storyteller" — Publish 10 posts
+
+Layout: ScrollView, pull-to-refresh.
+Фон: #0A0A0F
+
+
+────────────────────────────────────────────────────────────────────────────────
+ЕКРАН 14: WEEKLY SUMMARY SCREEN
+────────────────────────────────────────────────────────────────────────────────
+Цел: Седмичен обзор на активността.
+
+Елементи:
+  Горна част:
+    - Заглавие "Weekly Review" (h1)
+    - Период: "2026-03-02 — 2026-03-08" (caption)
+
+  Insight карта:
+    - Лява accent лента (4px)
+    - Italic текст с мотивационно послание
+    - Примери:
+      * "Outstanding week. You showed up almost every day."
+      * "You didn't try this week. Only you can change that."
+
+  Week Bar:
+    - 7 хоризонтални правоъгълника:
+      * Зелен = Yes day
+      * Червен = No day
+      * Сив (#22222F) = Missed day
+    - Етикети под тях: "X Yes", "X No", "X Missed"
+
+  Percent карта:
+    - Голямо число: "XX%" (56px, accent)
+    - Подтекст: "of the week you tried"
+
+  Stats ред:
+    - Current Streak | Longest Streak (разделени с линия)
+
+  "What held you back" секция:
+    - Excuse списък: category — Xx
+
+  "Mood this week" секция:
+    - Mood chips с count
+
+Layout: ScrollView, pull-to-refresh.
+Фон: #0A0A0F
+
+
+────────────────────────────────────────────────────────────────────────────────
+ЕКРАН 15: SETTINGS SCREEN
+────────────────────────────────────────────────────────────────────────────────
+Цел: Настройки на приложението и акаунта.
+
+Елементи:
+  - Заглавие "Settings" (h1)
+
+  Секция "PROFILE":
+    - Username — показва текущото (arrow →)
+    - Email — показва текущото (arrow →)
+    - Change Password (arrow →)
+    - Focus Areas (arrow → GoalsScreen)
+
+  Секция "APP PREFERENCES":
+    - Daily Reminder — toggle switch
+    - Evening Reminder — toggle switch
+    - Default Feed — "Recent"/"Following" (tap сменя)
+    - Default Anonymous Posting — toggle switch
+
+  Секция "NOTIFICATIONS":
+    - Push Notifications — toggle switch
+    - Weekly Summary — toggle switch
+
+  Секция "PRIVACY & SECURITY":
+    - Private Profile — toggle switch
+    - Blocked Users (arrow →)
+
+  Секция "ABOUT":
+    - Terms of Service (arrow →)
+    - Privacy Policy (arrow →)
+    - Version — "1.0.0"
+
+  Секция "ACCOUNT":
+    - Log Out (error червен текст)
+    - Delete Account (error червен текст)
+
+  Визуален стил на секции:
+    - Етикет: uppercase, letterSpacing 1.5, disabled цвят
+    - Контейнер: secondary фон, rounded corners, subtle border
+    - Редове: label ляво, value/toggle/arrow дясно, разделени с линия
+
+Layout: ScrollView.
+Фон: #0A0A0F
+
+
+────────────────────────────────────────────────────────────────────────────────
+ЕКРАН 16: SEARCH SCREEN
+────────────────────────────────────────────────────────────────────────────────
+Цел: Търсене на потребители.
+
+Елементи:
+  - Заглавие "Search" (h1)
+  - Подзаглавие "Find people in the community" (muted)
+  - Search TextInput с placeholder "Search by username..."
+  - Списък от UserCard-ове:
+    * Avatar кръг (accent glow)
+    * Username
+    * "Joined [дата]"
+    * Tap → UserProfile
+  - Empty state: "Start typing to search for users"
+  - No results: "No users found"
+
+Layout: FlatList.
+Фон: #0A0A0F
+
+
+================================================================================
+                         НАВИГАЦИЯ
+================================================================================
+
+Bottom Tab Bar (4 таба):
+  [Home]    [Feed]    [+]    [Profile]
+
+  - Home → HomeScreen
+  - Feed → FeedStack:
+      FeedList → PostDetail, UserProfile
+  - + → CreatePostScreen (modal style)
+  - Profile → ProfileStack:
+      Profile → Dashboard, Calendar, WeeklySummary, Settings, Goals, UserProfile
+
+Tab bar стил: тъмен фон (#12121A), без labels (само icons),
+accent цвят за активен tab, muted за неактивен.
+
+
+================================================================================
+                         КОМПОНЕНТИ
+================================================================================
+
+StatCard:
+  - Карта с secondary фон, subtle border, rounded
+  - Цветна лента отгоре (3px, съответния цвят)
+  - Голяма стойност (h2)
+  - Заглавие (label, muted)
+  - Подзаглавие (caption, disabled)
+  - flex: 1 (разтяга се в ред)
+
+PrimaryButton:
+  - Пълен width, accent фон, бял текст
+  - Варианти: default (accent), danger (error)
+  - Размери: medium, large
+  - Loading state: ActivityIndicator
+  - Disabled state: opacity 0.5
+
+TextInputField:
+  - Label (muted)
+  - Input с secondary фон, subtle border, rounded
+  - Error state: error border + error текст
+  - Secure text entry support
+
+PostCard:
+  - Secondary фон, rounded, subtle border
+  - Avatar + author info
+  - Category badge + prompt tag
+  - Title
+  - Footer: like, views, comments
+  - Shadow: small
+
+Toggle/Switch:
+  - Custom track (44x24, rounded)
+  - Thumb (20x20)
+  - Active: accent фон + бял thumb
+  - Inactive: elevated фон + disabled thumb
+
+Chip:
+  - Rounded full, border, tertiary фон
+  - Selected: accent glow фон + accent border
+  - Text: label size, muted/accent
+
+Section Header:
+  - Uppercase, letterSpacing 1.5, disabled цвят
+  - Малък шрифт (labelSmall)
+
+Settings Row:
+  - Flex row, space-between
+  - Label (body, main) + value/arrow/toggle (right)
+  - Разделител: subtle border bottom
+
+
+================================================================================
+                         TYPOGRAPHY
+================================================================================
+
+(Базирано на Inter / System font)
+
+h1:      28px, weight 700, letterSpacing -0.5
+h2:      22px, weight 700, letterSpacing -0.3
+h3:      18px, weight 600
+body:    15px, weight 400, lineHeight 22
+label:   13px, weight 600, letterSpacing 0.3
+labelSmall: 11px, weight 600
+caption: 12px, weight 400
+
+
+================================================================================
+                         SPACING SCALE
+================================================================================
+
+xs:   4px
+sm:   8px
+md:   12px
+lg:   16px
+xl:   20px
+xxl:  28px
+xxxl: 36px
+huge: 48px
+massive: 64px
+
+Border Radius:
+  sm: 6, md: 10, lg: 14, xl: 20, full: 9999
+
+Screen Padding:
+  horizontal: 24px
+
+
+================================================================================
+                         ИКОНКА НА ПРИЛОЖЕНИЕТО
+================================================================================
+
+Фон: #0A0A0F (dark)
+Елемент: Стилизирана отметка (checkmark) в #6C63FF с glow ефект
+Текст: "DYT" отдолу, бяло
+Стил: Минималистичен, premium, без детайли
+Размер: 1024x1024px
+
+================================================================================

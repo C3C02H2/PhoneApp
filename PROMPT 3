@@ -1,0 +1,77 @@
+Искам да създадеш backend за мобилно приложение.
+
+Технологии:
+Python
+FastAPI
+SQLAlchemy
+PostgreSQL
+JWT authentication
+Alembic migrations
+
+Контекст на приложението:
+Минималистична мотивационна платформа с:
+
+- user registration
+- login
+- blog posts
+- daily check-in
+- streak tracking
+
+Създай backend проект със структура:
+
+app/
+ core/
+ db/
+ models/
+ schemas/
+ routes/
+ services/
+ utils/
+
+Функционалности:
+
+Authentication
+- POST /auth/register
+- POST /auth/login
+
+Users
+- GET /users/me
+
+Posts
+- GET /posts
+- POST /posts
+- GET /posts/{id}
+
+Check-ins
+- POST /checkins
+- GET /checkins/me
+- GET /checkins/streak
+
+Изисквания:
+
+1. Password hashing
+2. JWT tokens
+3. dependency injection
+4. SQLAlchemy models
+5. Pydantic schemas
+6. error handling
+7. clean code structure
+
+Database models:
+User
+Post
+DailyCheckin
+
+Добави:
+
+- configuration файл
+- .env support
+- database connection
+- alembic setup
+- примерни seed posts
+
+В края дай инструкции:
+
+- как се инсталират dependencies
+- как се стартира backend
+- как се стартира база

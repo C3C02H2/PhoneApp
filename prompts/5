@@ -1,0 +1,38 @@
+Искам да добавя structured self-accountability data към DoYouTry.
+
+След daily check-in потребителят трябва да може да попълва:
+- какво опита днес
+- по коя цел е работил
+- колко време е отделил (5 min / 15 min / 30 min / 1h+)
+- кратка бележка
+- какво му е попречило
+- каква е следващата малка стъпка за утре
+- настроение / energy state
+
+При натискане на “No” трябва да може да избере excuse:
+- нямах време
+- бях изтощен
+- отлагах
+- не знаех откъде да започна
+- друго
+
+Искам системата да поддържа:
+1. Goals / focus areas
+2. Daily notes
+3. Excuse tracking
+4. Mood / energy tracking
+5. Tomorrow action / next small step
+6. Аналитика на най-честите excuses и patterns
+
+Искам:
+- database tables / models
+- backend CRUD endpoints
+- validation
+- UI forms
+- dropdown / select components
+- note cards
+- summary rendering
+- clean mobile UX
+- възможност тези данни после да се ползват за статистики и weekly summary
+
+Направи го като production feature, не demo.

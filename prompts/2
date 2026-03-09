@@ -1,0 +1,45 @@
+На база вече описаното приложение DoYouTry, искам да проектираш backend data model и database schema.
+
+Функционалности, които трябва да бъдат покрити:
+- users
+- auth
+- daily check-ins
+- streak tracking
+- total check-ins
+- goals / focus areas
+- daily notes
+- excuses при отговор “No”
+- mood / energy tracking
+- calendar history
+- posts
+- comments
+- likes
+- follows
+- profiles
+- achievements / badges
+- weekly summaries
+- notifications
+- communities / categories
+- privacy settings
+- anonymous posting
+- hard mode / reminder preferences
+- start small mode
+- anti-cheat ограничения
+
+Искам:
+1. Пълен списък на таблиците
+2. Полетата във всяка таблица
+3. Типовете данни
+4. Primary keys / foreign keys
+5. Ограничения и индекси
+6. Как да се смята streak надеждно
+7. Как да се пази история на check-in по дни
+8. Как да се предотвратят duplicate check-ins за един ден
+9. Как да се реализира follow system
+10. Как да се реализира achievements system
+11. Как да се реализира weekly summary system
+12. Как да се реализира private/public profile и anonymous post logic
+
+Искам отговорът да е като backend design document.
+След това генерирай SQL schema или ORM models според технологията на проекта.
+Пази архитектурата чиста и production-friendly.

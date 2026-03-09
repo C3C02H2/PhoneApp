@@ -1,0 +1,37 @@
+Искам да добавя user search, profiles и follow/accountability system към DoYouTry.
+
+Трябва да има:
+- търсене на потребители по username
+- user profile screen
+- own profile screen
+- public/private profile logic
+- follow / unfollow
+- followers / following count
+- accountability buddy concept (по желание, като future-ready структура)
+
+Профилът трябва да показва:
+- username
+- email (само за собственика)
+- joined date
+- current streak
+- longest streak
+- total yes check-ins
+- success rate за последните 30 дни
+- number of posts
+- number of comments
+- last active
+- selected goals / focus areas
+- public/private status
+
+Искам:
+1. Search endpoint и frontend search screen
+2. Profile endpoints
+3. Follow system backend logic
+4. Followers/following lists
+5. Profile permissions
+6. Собствен профил и чужд профил да се рендерират правилно
+7. Reusable profile header component
+8. Relationship state management
+9. Данните да са подготвени за following feed
+
+Направи реална структура, не временен mock.

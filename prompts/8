@@ -1,0 +1,39 @@
+Искам да добавя progress visualization и gamification към DoYouTry.
+
+Функции:
+- календар с history на check-in-ите
+- dashboard със статистики
+- achievements / badges
+- longest streak
+- total check-ins
+- yes/no ratio
+- 7 day / 30 day consistency
+- най-чести excuses
+- mood patterns
+- most active hour / time patterns ако е налично
+- progress by focus area
+
+Achievements examples:
+- First check-in
+- 3 day streak
+- 7 day streak
+- 30 day streak
+- First post
+- First comment
+- 100 check-ins
+
+Искам:
+1. Calendar screen с визуални статуси:
+   - green = yes
+   - red = no
+   - gray = missed / no entry
+2. Dashboard screen
+3. Backend aggregation endpoints
+4. Achievement engine
+5. Badge unlock logic
+6. UI cards за stats
+7. Исторически графики, ако е подходящо
+8. Премиум, минималистичен dark UI
+9. Clean empty states
+
+Направи architecture и implementation така, че да е scalable и easy to extend.

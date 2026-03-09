@@ -1,0 +1,48 @@
+Искам да имплементирам social feed за DoYouTry.
+
+Трябва да има:
+- global feed
+- following feed
+- create post
+- post details
+- comments
+- likes
+- user post list
+- anonymous posting option
+- post visibility rules според profile privacy
+
+Feed-ът не трябва да е хаотичен. Искам да има и prompt-based posting, например:
+- What did you try today?
+- What did you fail at today?
+- What will you do tomorrow?
+
+Искам постовете да може да имат:
+- text content
+- author
+- created_at
+- like count
+- comment count
+- community/category
+- anonymous flag
+- visibility setting
+
+Искам:
+1. Database schema за posts/comments/likes
+2. Endpoints за create/read/list/comment/like
+3. Pagination
+4. Sorting:
+   - latest
+   - most liked
+   - following
+5. Feed filters
+6. Post details screen
+7. Create post screen
+8. Anonymous post logic
+9. Private/public profile compatibility
+10. UX ограничение за quality feed:
+   - max length
+   - validation
+   - possibly no spammy empty content
+
+Искам mobile UI да е минималистичен, dark и premium.
+Създай reusable post card, comment list и create post flow.

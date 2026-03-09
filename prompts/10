@@ -1,0 +1,47 @@
+Искам да направим финален feature pass за DoYouTry, така че приложението да има силен характер и premium усещане.
+
+Трябва да покрием:
+1. Private mode
+2. Anonymous posting
+3. Communities / thematic groups:
+   - Builders
+   - Fitness
+   - Study
+   - Discipline
+   - Creators
+4. Brand voice
+5. Hard-truth copywriting
+6. Minimal premium dark design
+7. UI consistency
+8. Clean navigation
+9. Empty states
+10. Error states
+11. Final polish на UX
+
+Искам системата да има централизирана text/brand voice layer за:
+- welcome screen
+- yes messages
+- no messages
+- missed day messages
+- reminders
+- weekly summary tone
+- achievement unlock messages
+
+Искам:
+- public/private profile behavior
+- anonymous post behavior
+- community tagging and filtering
+- reusable typography, spacing, buttons, cards and theme tokens
+- final design system pass
+- dark premium style
+- strong but not cringe motivational tone
+- clean, elegant, production-ready UX
+
+Моля те:
+- направи refactor plan за UI и UX consistency
+- предложи component library / design system structure
+- централизирай app text constants
+- внедри feature flags за optional modules
+- подготви приложението за future scale
+
+Целта е приложението да изглежда като истински завършен продукт, а не като сглобка от екрани.

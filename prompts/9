@@ -1,0 +1,38 @@
+Искам да добавя notifications и weekly summary system към DoYouTry.
+
+Notification requirements:
+- daily reminder в избран час
+- optional second reminder вечерта, ако няма check-in
+- hard mode reminders
+- push notification support
+- notification preferences per user
+
+Примери за messages:
+- Did you try today?
+- Still time to try.
+- No one is coming to save your streak.
+- Silence is also an answer.
+
+Weekly summary requirements:
+- колко дни от 7 е имало yes
+- current streak
+- longest streak
+- total check-ins
+- top excuses
+- mood trends
+- кратко summary на notes
+- suggested next step / insight
+
+Искам:
+1. Notification data model
+2. Reminder preference model
+3. Backend scheduling strategy
+4. Push notification integration structure
+5. Weekly summary generation logic
+6. Summary endpoint
+7. Weekly summary UI screen/card
+8. Handling for timezone-aware reminders
+9. Hard mode wording support
+10. Graceful opt-in / opt-out flow за notifications
+
+Направи стабилна архитектура и practical implementation plan.

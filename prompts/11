@@ -1,0 +1,168 @@
+Искам да добавим завършен Settings и Profile management модул към мобилното приложение DoYouTry, както и да направим цялостен visual/UX redesign, така че приложението да изглежда по-модерно, по-интуитивно и по-красиво, но все пак да остане минималистично, тъмно и premium.
+
+Важно:
+- Не искам никакви емотикони в UI
+- Не искам претрупан дизайн
+- Искам clean, elegant, modern interface
+- Искам по-добра визуална йерархия, spacing, typography и card layout
+- Искам приложението да изглежда по-живо и по-изпипано, а не “дървено”
+- Искам UX-ът да е по-интуитивен, с по-ясна навигация и по-добро групиране на действията
+
+Цели:
+1. Да има пълноценен Settings screen
+2. Да има Edit Profile screen
+3. Да има App Preferences section
+4. Да има Privacy & Security section
+5. Да има Notification Settings section
+6. Да има visual redesign на основните екрани
+7. Да има по-модерен component system
+8. Да има по-добър information architecture
+9. Да има consistent design language в цялото приложение
+
+Settings модулът трябва да включва:
+
+Profile settings:
+- смяна на username
+- смяна на display name, ако има такъв
+- смяна на email
+- смяна на password
+- профилна снимка, ако архитектурата го позволява
+- bio / short description, ако е уместно
+- избор на focus areas / goals
+- избор на accountability style / tone mode, ако приложението поддържа такова
+- избор дали профилът да е public или private
+
+App preferences:
+- reminder hour
+- включване / изключване на daily reminders
+- включване / изключване на evening reminder
+- hard mode on/off
+- start small mode on/off
+- language-ready structure, ако в бъдеще ще има localization
+- theme structure, като засега дизайнът остава dark premium
+- опции за feed preferences:
+  - global feed / following feed default
+  - sort preference
+- calendar/statistics preferences, ако е уместно
+
+Privacy & security:
+- logout
+- change password
+- active sessions structure, ако е приложимо
+- reset password flow
+- account visibility
+- anonymous posting preference
+- who can view profile / posts, ако архитектурата го позволява
+- account delete / deactivate flow structure
+- legal/info section placeholders:
+  - terms
+  - privacy policy
+  - app version
+
+Notification settings:
+- push notifications on/off
+- reminder notifications on/off
+- weekly summary notifications on/off
+- hard mode reminder wording support
+- timezone-aware reminder logic structure
+
+Visual redesign requirements:
+Искам да направиш redesign на основните екрани:
+- Welcome screen
+- Login / Register
+- Home
+- Feed
+- Post details
+- Create post
+- Search
+- Profile
+- Settings
+- Calendar
+- Dashboard / Stats
+
+Дизайн насоки:
+- dark premium visual language
+- черен / тъмносив фон
+- clean typography
+- по-добра визуална йерархия
+- модерни cards
+- елегантни бутони
+- повече whitespace
+- по-добро подравняване
+- по-добри section headers
+- по-добри empty states
+- по-добри loading states
+- по-добри error states
+- никакви емотикони
+- никакъв визуален шум
+- минималистично, но не скучно
+- модерно, но не flashy
+- premium, but usable
+- intuitive mobile-first UX
+
+Искам интерфейсът да използва:
+- consistent spacing scale
+- typography scale
+- reusable button variants
+- reusable cards
+- reusable input fields
+- reusable list items
+- reusable section containers
+- reusable stat components
+- reusable modal / bottom sheet patterns
+- reusable settings row component
+- reusable toggle/switch component
+- reusable segmented control / tabs, ако е уместно
+
+UX подобрения:
+- по-логична bottom tab navigation или screen flow
+- ясно отделяне на primary и secondary actions
+- по-малко визуално натоварване
+- по-добра discoverability на важните функции
+- settings да са добре категоризирани
+- profile actions да са лесни за намиране
+- по-добър entry point към stats, calendar и settings
+- по-естествени screen transitions, ако framework-ът го позволява
+- forms да са по-чисти и по-лесни за попълване
+- по-добър visual feedback при tap, save, error и success
+- достъпността да не бъде жертвана заради aesthetics
+
+Искам от теб:
+1. Първо анализирай текущия UI и структурата на проекта
+2. Посочи кои екрани и компоненти изглеждат най-“дървени” и защо
+3. Предложи нов UI/UX structure
+4. Предложи component architecture за design system
+5. Създай или refactor-вай theme tokens:
+   - colors
+   - spacing
+   - radius
+   - typography
+   - shadows/elevation
+   - borders
+6. Централизирай стиловете и text constants, където е удачно
+7. Имплементирай Settings screen и свързаните му подсекции
+8. Имплементирай Edit Profile flow
+9. Refactor-вай основните екрани към по-модерен и consistent стил
+10. Запази приложението минималистично и production-ready
+
+Implementation rules:
+- Не чупи съществуващата функционалност
+- Първо анализирай проекта и съществуващите файлове
+- Използвай текущия stack и coding style
+- Ако е нужно, направи постепенен refactor
+- Покажи кои файлове добавяш и кои променяш
+- Обясни големите UI/UX решения
+- Не оставяй TODO placeholders
+- Изходът да е реална имплементация, не само идеи
+- Ако дадена настройка още няма backend support, подготви UI + state structure + integration-ready architecture
+- Направи всичко clean, scalable и лесно за бъдещо разширяване
+
+Финална цел:
+Искам приложението да изглежда като истински завършен premium продукт:
+- минималистичен
+- модерен
+- по-красив
+- по-интуитивен
+- по-малко “дървен”
+- без емотикони
+- с ясно усещане за стил, последователност и качество

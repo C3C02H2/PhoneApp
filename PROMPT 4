@@ -1,0 +1,114 @@
+Искам да създадеш React Native мобилно приложение.
+
+Технологии:
+React Native
+Expo
+TypeScript
+React Navigation
+Axios
+AsyncStorage
+
+Дизайн:
+Модерен минималистичен dark theme интерфейс.
+Много clean UI, elegant typography, premium look.
+
+Основни екрани:
+
+1 Welcome Screen
+"Do you try?"
+
+Бутони:
+Yes
+No
+
+No:
+"You already failed."
+
+Yes:
+navigate to Auth.
+
+2 Authentication
+
+Register
+- username
+- email
+- password
+
+Login
+- email
+- password
+
+3 Home Screen
+
+Въпрос:
+"Did you try today?"
+
+Yes / No
+
+Показва:
+current streak
+total checkins
+
+4 Feed Screen
+
+Списък с постове.
+
+5 Post Details Screen
+
+Пълен текст на пост.
+
+6 Create Post Screen
+
+Форма за нов пост.
+
+7 Profile Screen
+
+username
+email
+joined date
+streak
+logout
+
+Navigation:
+
+Bottom Tabs
+Home
+Feed
+Create
+Profileч
+
+Architecture:
+
+src/
+api/
+components/
+screens/
+navigation/
+hooks/
+context/
+types/
+theme/
+
+Reusable components:
+
+PrimaryButton
+TextInputField
+PostCard
+StatCard
+
+API endpoints:
+
+POST /auth/register
+POST /auth/login
+GET /users/me
+GET /posts
+POST /posts
+GET /posts/{id}
+POST /checkins
+GET /checkins/streak
+
+Добави инструкции:
+
+- как се стартира Expo
+- как се настройва API URL
+- как се тества на Android emulator
