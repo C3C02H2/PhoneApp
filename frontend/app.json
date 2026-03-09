@@ -1,0 +1,43 @@
+{
+  "expo": {
+    "name": "DoYouTry",
+    "slug": "doyoutry",
+    "version": "5.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "backgroundColor": "#0A0A0F"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.doyoutry.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0A0A0F"
+      },
+      "package": "com.doyoutry.app",
+      "versionCode": 8
+    },
+    "plugins": [
+      "expo-font",
+      [
+        "expo-notifications",
+        {
+          "sounds": []
+        }
+      ]
+    ],
+    "extra": {
+      "apiUrl": "https://doyoutry.duckdns.org",
+      "eas": {
+        "projectId": "56647039-77f0-48e1-b86b-936059f0103b"
+      }
+    }
+  }
+}
