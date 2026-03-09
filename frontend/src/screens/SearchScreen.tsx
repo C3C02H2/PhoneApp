@@ -13,9 +13,9 @@ import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { colors, typography, spacing, screenPadding, borderRadius } from '../theme';
 import { usersAPI } from '../api/users';
-import { UserSearchResult, SearchStackParamList } from '../types';
+import { UserSearchResult, ChatStackParamList } from '../types';
 
-type SearchNavProp = NativeStackNavigationProp<SearchStackParamList, 'SearchList'>;
+type SearchNavProp = NativeStackNavigationProp<ChatStackParamList, 'SearchUsers'>;
 
 export const SearchScreen: React.FC = () => {
   const navigation = useNavigation<SearchNavProp>();

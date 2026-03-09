@@ -11,6 +11,7 @@ import { UserProfileScreen } from '../screens/UserProfileScreen';
 import { CreatePostScreen } from '../screens/CreatePostScreen';
 import { ProfileScreen } from '../screens/ProfileScreen';
 import { GoalsScreen } from '../screens/GoalsScreen';
+import { WeeklyTargetsScreen } from '../screens/WeeklyTargetsScreen';
 import { CalendarScreen } from '../screens/CalendarScreen';
 import { DashboardScreen } from '../screens/DashboardScreen';
 import { WeeklySummaryScreen } from '../screens/WeeklySummaryScreen';
@@ -18,6 +19,7 @@ import { SettingsScreen } from '../screens/SettingsScreen';
 import { BlockedUsersScreen } from '../screens/BlockedUsersScreen';
 import { ChatListScreen } from '../screens/ChatListScreen';
 import { ChatRoomScreen } from '../screens/ChatRoomScreen';
+import { SearchScreen } from '../screens/SearchScreen';
 import { MainTabParamList, FeedStackParamList, ProfileStackParamList, ChatStackParamList } from '../types';
 
 const Tab = createBottomTabNavigator<MainTabParamList>();
@@ -50,6 +52,7 @@ const ProfileStackNavigator: React.FC = () => (
     <ProfStack.Screen name="Settings" component={SettingsScreen} options={stackScreenOpts('Settings')} />
     <ProfStack.Screen name="BlockedUsers" component={BlockedUsersScreen} options={stackScreenOpts('Blocked Users')} />
     <ProfStack.Screen name="Goals" component={GoalsScreen} options={stackScreenOpts('Focus Areas')} />
+    <ProfStack.Screen name="WeeklyTargets" component={WeeklyTargetsScreen} options={stackScreenOpts('Weekly Targets')} />
     <ProfStack.Screen name="UserProfile" component={UserProfileScreen} options={stackScreenOpts('Profile')} />
   </ProfStack.Navigator>
 );
@@ -58,6 +61,7 @@ const ChatStackNavigator: React.FC = () => (
   <ChatStack.Navigator screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.background.primary } }}>
     <ChatStack.Screen name="ChatList" component={ChatListScreen} />
     <ChatStack.Screen name="ChatRoom" component={ChatRoomScreen} options={stackScreenOpts('Chat')} />
+    <ChatStack.Screen name="SearchUsers" component={SearchScreen} options={stackScreenOpts('Search Users')} />
     <ChatStack.Screen name="UserProfile" component={UserProfileScreen} options={stackScreenOpts('Profile')} />
   </ChatStack.Navigator>
 );

@@ -155,7 +155,11 @@ export const ChatRoomScreen: React.FC<{ route?: any; navigation?: any }> = ({ ro
 
   return (
     <SafeAreaView style={styles.container}>
-      <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === 'ios' ? 'padding' : undefined} keyboardVerticalOffset={90}>
+      <KeyboardAvoidingView
+        style={{ flex: 1 }}
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+        keyboardVerticalOffset={Platform.OS === 'ios' ? 100 : 0}
+      >
         {expired && (
           <View style={styles.expiredBanner}>
             <Text style={styles.expiredText}>Chat has ended. Messages have been deleted.</Text>
@@ -175,9 +179,10 @@ export const ChatRoomScreen: React.FC<{ route?: any; navigation?: any }> = ({ ro
           renderItem={renderMessage}
           contentContainerStyle={styles.messagesList}
           onContentSizeChange={() => flatListRef.current?.scrollToEnd({ animated: true })}
+          keyboardShouldPersistTaps="handled"
           ListEmptyComponent={
             <View style={styles.emptyChat}>
-              <Text style={styles.emptyChatText}>Say hello! 👋</Text>
+              <Text style={styles.emptyChatText}>Say hello!</Text>
             </View>
           }
         />

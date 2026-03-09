@@ -129,6 +129,7 @@ export const ProfileScreen: React.FC = () => {
           <NavRow icon={'\u25C8'} label="Calendar" onPress={() => navigation.navigate('Calendar')} />
           <NavRow icon={'\u2261'} label="Weekly Review" onPress={() => navigation.navigate('WeeklySummary')} />
           <NavRow icon={'\u25CE'} label="Focus Areas" onPress={() => navigation.navigate('Goals')} />
+          <NavRow icon={'\u2726'} label="Weekly Targets" onPress={() => navigation.navigate('WeeklyTargets')} />
           <NavRow icon={'\u2699'} label="Settings" onPress={() => navigation.navigate('Settings')} />
         </View>
 

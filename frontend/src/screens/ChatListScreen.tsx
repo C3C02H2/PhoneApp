@@ -101,6 +101,14 @@ export const ChatListScreen: React.FC<{ navigation?: any }> = ({ navigation }) =
           <>
             <Text style={styles.title}>Chat</Text>
 
+            <TouchableOpacity
+              style={styles.searchBtn}
+              onPress={() => navigation?.navigate('SearchUsers')}
+              activeOpacity={0.7}
+            >
+              <Text style={styles.searchBtnText}>Search users</Text>
+            </TouchableOpacity>
+
             {incomingRequests.length > 0 && (
               <>
                 <Text style={styles.sectionLabel}>INCOMING REQUESTS</Text>
@@ -172,9 +180,8 @@ export const ChatListScreen: React.FC<{ navigation?: any }> = ({ navigation }) =
 
             {incomingRequests.length === 0 && sentRequests.length === 0 && sessions.length === 0 && (
               <View style={styles.empty}>
-                <Text style={styles.emptyIcon}>💬</Text>
                 <Text style={styles.emptyTitle}>No active chats</Text>
-                <Text style={styles.emptySubtitle}>Search for someone and send a chat request!</Text>
+                <Text style={styles.emptySubtitle}>Search for someone and send a chat request</Text>
               </View>
             )}
           </>
@@ -188,6 +195,22 @@ const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: colors.background.primary },
   scroll: { paddingHorizontal: screenPadding.horizontal, paddingTop: spacing.xxl, paddingBottom: 100 },
   title: { fontSize: 28, fontWeight: '700', color: colors.primary.main, marginBottom: spacing.lg },
+
+  searchBtn: {
+    backgroundColor: colors.accent.main,
+    borderRadius: borderRadius.lg,
+    paddingVertical: spacing.lg,
+    paddingHorizontal: spacing.xl,
+    alignItems: 'center',
+    marginBottom: spacing.xl,
+    minHeight: 52,
+    justifyContent: 'center',
+  },
+  searchBtnText: {
+    fontSize: 17,
+    fontWeight: '700',
+    color: '#fff',
+  },
 
   sectionLabel: {
     fontSize: 11, fontWeight: '600', color: colors.primary.disabled, letterSpacing: 1.5,
@@ -239,7 +262,6 @@ const styles = StyleSheet.create({
   sessionArrow: { fontSize: 24, color: colors.primary.disabled },
 
   empty: { alignItems: 'center', marginTop: 80 },
-  emptyIcon: { fontSize: 56, marginBottom: spacing.md },
   emptyTitle: { fontSize: 18, fontWeight: '700', color: colors.primary.main, marginBottom: spacing.xs },
   emptySubtitle: { fontSize: 14, color: colors.primary.disabled, textAlign: 'center' },
 });

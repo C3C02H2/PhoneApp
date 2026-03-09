@@ -31,6 +31,7 @@ export const UserProfileScreen: React.FC = () => {
   const [toggling, setToggling] = useState(false);
   const [blockToggling, setBlockToggling] = useState(false);
   const [chatRequesting, setChatRequesting] = useState(false);
+  const [myIsPrivate, setMyIsPrivate] = useState(false);
   const isOwnProfile = user?.id === userId;
 
   const fetchProfile = useCallback(async () => {
@@ -47,6 +48,12 @@ export const UserProfileScreen: React.FC = () => {
   useEffect(() => {
     fetchProfile();
   }, [fetchProfile]);
+
+  useEffect(() => {
+    if (!isOwnProfile) {
+      usersAPI.getSettings().then((s) => setMyIsPrivate(s.is_private)).catch(() => {});
+    }
+  }, [isOwnProfile]);
 
   const onRefresh = async () => {
     setRefreshing(true);
@@ -209,18 +216,20 @@ export const UserProfileScreen: React.FC = () => {
                   </Text>
                 )}
               </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.chatButton}
-                onPress={handleChatRequest}
-                disabled={chatRequesting}
-                activeOpacity={0.7}
-              >
-                {chatRequesting ? (
-                  <ActivityIndicator size="small" color="#fff" />
-                ) : (
-                  <Text style={styles.chatButtonText}>💬 Chat</Text>
-                )}
-              </TouchableOpacity>
+              {!profile.is_private && !myIsPrivate && (
+                <TouchableOpacity
+                  style={styles.chatButton}
+                  onPress={handleChatRequest}
+                  disabled={chatRequesting}
+                  activeOpacity={0.7}
+                >
+                  {chatRequesting ? (
+                    <ActivityIndicator size="small" color="#fff" />
+                  ) : (
+                    <Text style={styles.chatButtonText}>Chat</Text>
+                  )}
+                </TouchableOpacity>
+              )}
               <TouchableOpacity
                 style={[styles.blockButton, profile.is_blocked && styles.blockButtonActive]}
                 onPress={handleToggleBlock}

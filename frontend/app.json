@@ -2,7 +2,7 @@
   "expo": {
     "name": "DoYouTry",
     "slug": "doyoutry",
-    "version": "5.0.0",
+    "version": "5.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "dark",
@@ -17,12 +17,13 @@
       "bundleIdentifier": "com.doyoutry.app"
     },
     "android": {
+      "softwareKeyboardLayoutMode": "resize",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#0A0A0F"
       },
       "package": "com.doyoutry.app",
-      "versionCode": 8
+      "versionCode": 9
     },
     "plugins": [
       "expo-font",

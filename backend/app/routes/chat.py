@@ -78,6 +78,17 @@ async def send_message(
 ):
     msg = ChatService.send_message(db, session_id, current_user.id, data.content)
 
+    recipient_id = ChatService.get_other_user_in_session(db, session_id, current_user.id)
+    if recipient_id:
+        tokens = PushService.get_tokens_for_users(db, [recipient_id])
+        if tokens:
+            await PushService.send_notifications(
+                tokens,
+                "New message",
+                f"{msg.sender_username}: {msg.content[:50]}{'...' if len(msg.content) > 50 else ''}",
+                {"type": "chat_message", "sessionId": str(session_id)},
+            )
+
     session_id_str = str(session_id)
     if session_id_str in active_connections:
         msg_data = {
@@ -133,6 +144,16 @@ async def chat_websocket(websocket: WebSocket, session_id: str):
                     msg = ChatService.send_message(
                         db, UUID(session_id), UUID(user_id), parsed["content"]
                     )
+                    recipient_id = ChatService.get_other_user_in_session(db, UUID(session_id), UUID(user_id))
+                    if recipient_id:
+                        tokens = PushService.get_tokens_for_users(db, [recipient_id])
+                        if tokens:
+                            await PushService.send_notifications(
+                                tokens,
+                                "New message",
+                                f"{msg.sender_username}: {msg.content[:50]}{'...' if len(msg.content) > 50 else ''}",
+                                {"type": "chat_message", "sessionId": session_id},
+                            )
                     msg_data = {
                         "type": "message",
                         "id": str(msg.id),

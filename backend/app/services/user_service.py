@@ -91,6 +91,7 @@ class UserService:
             id=user.id,
             username=user.username,
             is_active=user.is_active,
+            is_private=getattr(user, 'is_private', False),
             created_at=user.created_at,
             posts_count=posts_count,
             comments_count=comments_count,

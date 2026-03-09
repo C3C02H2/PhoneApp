@@ -59,7 +59,6 @@ export const BlockedUsersScreen: React.FC = () => {
     <SafeAreaView style={styles.container}>
       {users.length === 0 ? (
         <View style={styles.empty}>
-          <Text style={styles.emptyIcon}>🚫</Text>
           <Text style={styles.emptyText}>No blocked users</Text>
         </View>
       ) : (
@@ -87,7 +86,6 @@ export const BlockedUsersScreen: React.FC = () => {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: colors.background.primary },
   empty: { flex: 1, justifyContent: 'center', alignItems: 'center' },
-  emptyIcon: { fontSize: 48, marginBottom: spacing.md },
   emptyText: { fontSize: 16, color: colors.primary.disabled },
   row: {
     flexDirection: 'row',

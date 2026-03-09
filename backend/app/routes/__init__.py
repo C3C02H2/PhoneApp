@@ -9,6 +9,7 @@ from app.routes.goals import router as goals_router
 from app.routes.stats import router as stats_router
 from app.routes.weekly import router as weekly_router
 from app.routes.chat import router as chat_router
+from app.routes.weekly_targets import router as weekly_targets_router
 
 api_router = APIRouter()
 
@@ -21,3 +22,4 @@ api_router.include_router(goals_router, prefix="/goals", tags=["Goals"])
 api_router.include_router(stats_router, prefix="/stats", tags=["Stats"])
 api_router.include_router(weekly_router, prefix="/weekly", tags=["Weekly"])
 api_router.include_router(chat_router, prefix="/chat", tags=["Chat"])
+api_router.include_router(weekly_targets_router, prefix="/weekly-targets", tags=["Weekly Targets"])

@@ -26,6 +26,18 @@ class ChatService:
         if not receiver:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")
 
+        sender = db.query(User).filter(User.id == sender_id).first()
+        if sender and getattr(sender, "is_private", False):
+            raise HTTPException(
+                status_code=status.HTTP_403_FORBIDDEN,
+                detail="Chat requests are disabled when your profile is private",
+            )
+        if getattr(receiver, "is_private", False):
+            raise HTTPException(
+                status_code=status.HTTP_403_FORBIDDEN,
+                detail="This user has a private profile and does not accept chat requests",
+            )
+
         existing = db.query(ChatRequest).filter(
             ChatRequest.sender_id == sender_id,
             ChatRequest.receiver_id == receiver_id,
@@ -34,7 +46,8 @@ class ChatService:
         if existing:
             raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="You already have a pending request to this user")
 
-        sender = db.query(User).filter(User.id == sender_id).first()
+        if not sender:
+            sender = db.query(User).filter(User.id == sender_id).first()
 
         req = ChatRequest(
             sender_id=sender_id,
@@ -138,6 +151,13 @@ class ChatService:
             content=msg.content,
             created_at=msg.created_at,
         )
+
+    @staticmethod
+    def get_other_user_in_session(db: Session, session_id: UUID, user_id: UUID) -> UUID | None:
+        session = db.query(ChatSession).filter(ChatSession.id == session_id).first()
+        if not session or user_id not in (session.user1_id, session.user2_id):
+            return None
+        return session.user2_id if session.user1_id == user_id else session.user1_id
 
     @staticmethod
     def get_session_messages(db: Session, session_id: UUID, user_id: UUID) -> list[ChatMessageResponse]:

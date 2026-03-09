@@ -86,6 +86,7 @@ export interface UserProfile {
   id: string;
   username: string;
   is_active: boolean;
+  is_private?: boolean;
   created_at: string;
   posts_count: number;
   total_likes_received: number;
@@ -165,6 +166,33 @@ export interface UpdateGoalRequest {
   color?: string;
   is_active?: boolean;
   sort_order?: number;
+}
+
+// === Weekly Targets ===
+export interface WeeklyTarget {
+  id: string;
+  title: string;
+  target_count: number;
+  current_count: number;
+  week_start: string;
+  created_at: string;
+}
+
+export interface WeeklyTargetListResponse {
+  targets: WeeklyTarget[];
+  week_start: string;
+  week_end: string;
+}
+
+export interface CreateWeeklyTargetRequest {
+  title: string;
+  target_count?: number;
+}
+
+export interface UpdateWeeklyTargetRequest {
+  title?: string;
+  target_count?: number;
+  current_count?: number;
 }
 
 // === Check-in Context (Yes details) ===
@@ -298,11 +326,13 @@ export type ChatStackParamList = {
   ChatList: undefined;
   ChatRoom: { sessionId: string };
   UserProfile: { userId: string };
+  SearchUsers: undefined;
 };
 
 export type ProfileStackParamList = {
   Profile: undefined;
   Goals: undefined;
+  WeeklyTargets: undefined;
   Calendar: undefined;
   Dashboard: undefined;
   WeeklySummary: undefined;

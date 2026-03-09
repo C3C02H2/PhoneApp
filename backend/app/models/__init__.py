@@ -12,9 +12,11 @@ from app.models.checkin_context import CheckinContext
 from app.models.excuse import Excuse
 from app.models.achievement import UserAchievement
 from app.models.chat import ChatRequest, ChatSession, ChatMessage
+from app.models.weekly_target import WeeklyTarget
 
 __all__ = [
     "User", "Post", "DailyCheckin", "Comment", "Like", "PasswordResetToken",
     "Follow", "PushToken", "Block", "Goal", "CheckinContext", "Excuse", "UserAchievement",
     "ChatRequest", "ChatSession", "ChatMessage",
+    "WeeklyTarget",
 ]

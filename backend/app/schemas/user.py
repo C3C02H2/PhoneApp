@@ -63,6 +63,7 @@ class UserProfileResponse(BaseModel):
     id: UUID
     username: str
     is_active: bool
+    is_private: bool = False
     created_at: datetime
     posts_count: int = 0
     total_likes_received: int = 0
