@@ -13,7 +13,7 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from 'react-native';
-import { colors, typography, spacing, screenPadding, borderRadius, shadows } from '../theme';
+import { colors, typography, spacing, screenPadding, shadows } from '../theme';
 import { PrimaryButton } from '../components/PrimaryButton';
 import { StatCard } from '../components/StatCard';
 import { checkinsAPI } from '../api/checkins';
@@ -476,7 +476,7 @@ const styles = StyleSheet.create({
   },
   yesBtn: {
     backgroundColor: colors.success.main,
-    borderRadius: borderRadius.lg,
+    borderRadius: 16,
     paddingVertical: 16,
     alignItems: 'center',
   },
@@ -484,7 +484,7 @@ const styles = StyleSheet.create({
   noBtn: {
     borderWidth: 1,
     borderColor: colors.border.light,
-    borderRadius: borderRadius.lg,
+    borderRadius: 16,
     paddingVertical: 16,
     alignItems: 'center',
   },
@@ -492,7 +492,7 @@ const styles = StyleSheet.create({
   noteBtn: {
     borderWidth: 1,
     borderColor: colors.border.subtle,
-    borderRadius: borderRadius.lg,
+    borderRadius: 16,
     paddingVertical: 14,
     alignItems: 'center',
   },
@@ -501,7 +501,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.success.glow,
     paddingHorizontal: spacing.xl,
     paddingVertical: spacing.md,
-    borderRadius: borderRadius.full,
+    borderRadius: 9999,
     marginBottom: spacing.xxl,
     alignSelf: 'center',
   },
@@ -539,8 +539,8 @@ const styles = StyleSheet.create({
   },
   modalContent: {
     backgroundColor: colors.background.secondary,
-    borderTopLeftRadius: borderRadius.xxl,
-    borderTopRightRadius: borderRadius.xxl,
+    borderTopLeftRadius: 24,
+    borderTopRightRadius: 24,
     paddingHorizontal: screenPadding.horizontal,
     paddingTop: spacing.xxl,
     paddingBottom: spacing.massive,
@@ -575,7 +575,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: spacing.lg,
     paddingVertical: spacing.sm,
-    borderRadius: borderRadius.full,
+    borderRadius: 9999,
     borderWidth: 1,
     borderColor: colors.border.light,
     backgroundColor: colors.background.tertiary,
@@ -601,7 +601,7 @@ const styles = StyleSheet.create({
   },
   textInput: {
     backgroundColor: colors.background.tertiary,
-    borderRadius: borderRadius.md,
+    borderRadius: 12,
     borderWidth: 1,
     borderColor: colors.border.light,
     paddingHorizontal: spacing.lg,
@@ -617,7 +617,7 @@ const styles = StyleSheet.create({
   excuseRow: {
     paddingVertical: spacing.md,
     paddingHorizontal: spacing.lg,
-    borderRadius: borderRadius.md,
+    borderRadius: 12,
     borderWidth: 1,
     borderColor: colors.border.subtle,
     marginBottom: spacing.sm,

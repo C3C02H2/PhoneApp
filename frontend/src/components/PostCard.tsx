@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { colors, typography, spacing, borderRadius, shadows } from '../theme';
+import { colors, typography, spacing, shadows } from '../theme';
 import { Post } from '../types';
 import { timeAgo } from '../utils/timeAgo';
 import { postsAPI } from '../api/posts';
@@ -110,7 +110,7 @@ export const PostCard: React.FC<PostCardProps> = ({ post, onPress, onLikeUpdate,
 const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.background.secondary,
-    borderRadius: borderRadius.lg,
+    borderRadius: 16,
     padding: spacing.xl,
     marginBottom: spacing.lg,
     borderWidth: 1,
@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
   avatar: {
     width: 36,
     height: 36,
-    borderRadius: borderRadius.full,
+    borderRadius: 9999,
     backgroundColor: colors.accent.glow,
     alignItems: 'center',
     justifyContent: 'center',
@@ -171,7 +171,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.accent.glow,
     paddingHorizontal: spacing.sm,
     paddingVertical: 2,
-    borderRadius: borderRadius.sm,
+    borderRadius: 8,
   },
   categoryText: {
     ...typography.caption,

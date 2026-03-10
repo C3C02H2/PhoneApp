@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { colors, typography, spacing, screenPadding, borderRadius } from '../theme';
+import { colors, typography, spacing, screenPadding } from '../theme';
 import { useAuth } from '../hooks/useAuth';
 import { checkinsAPI } from '../api/checkins';
 import { usersAPI } from '../api/users';
@@ -158,7 +158,7 @@ const styles = StyleSheet.create({
 
   statsRow: { flexDirection: 'row', marginBottom: spacing.xxl },
   statBox: {
-    flex: 1, borderRadius: borderRadius.lg, paddingVertical: spacing.xl,
+    flex: 1, borderRadius: 16, paddingVertical: spacing.xl,
     paddingHorizontal: spacing.lg, alignItems: 'center',
     borderWidth: 1, borderColor: colors.border.subtle,
   },
@@ -169,7 +169,7 @@ const styles = StyleSheet.create({
   sectionTitle: { ...typography.label, color: colors.primary.muted, marginBottom: spacing.md, fontSize: 14 },
 
   goalsCard: {
-    backgroundColor: colors.background.secondary, borderRadius: borderRadius.lg,
+    backgroundColor: colors.background.secondary, borderRadius: 16,
     borderWidth: 1, borderColor: colors.border.subtle, overflow: 'hidden',
   },
   goalRow: {
@@ -181,13 +181,13 @@ const styles = StyleSheet.create({
   goalText: { ...typography.body, color: colors.primary.main, flex: 1 },
 
   editBtn: {
-    borderWidth: 1, borderColor: colors.border.light, borderRadius: borderRadius.lg,
+    borderWidth: 1, borderColor: colors.border.light, borderRadius: 16,
     paddingVertical: spacing.lg, alignItems: 'center', marginBottom: spacing.xxl,
   },
   editBtnText: { ...typography.label, color: colors.primary.muted, fontSize: 15 },
 
   navSection: {
-    backgroundColor: colors.background.secondary, borderRadius: borderRadius.lg,
+    backgroundColor: colors.background.secondary, borderRadius: 16,
     borderWidth: 1, borderColor: colors.border.subtle, overflow: 'hidden',
     marginBottom: spacing.xxl,
   },
@@ -207,7 +207,7 @@ const styles = StyleSheet.create({
 
   logoutRow: {
     paddingVertical: spacing.lg, alignItems: 'center',
-    borderRadius: borderRadius.lg, borderWidth: 1,
+    borderRadius: 16, borderWidth: 1,
     borderColor: 'rgba(248,113,113,0.2)',
   },
   logoutText: { ...typography.label, color: colors.error.main, fontSize: 15 },

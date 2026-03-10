@@ -14,7 +14,7 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from 'react-native';
-import { colors, typography, spacing, screenPadding, borderRadius } from '../theme';
+import { colors, typography, spacing, screenPadding } from '../theme';
 import { useAuth } from '../hooks/useAuth';
 import { usersAPI, UserSettings } from '../api/users';
 

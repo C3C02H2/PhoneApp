@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { colors, typography, spacing, screenPadding, borderRadius } from '../theme';
+import { colors, typography, spacing, screenPadding } from '../theme';
 import { usersAPI } from '../api/users';
 import { UserSearchResult, ChatStackParamList } from '../types';
 
@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
   },
   searchInput: {
     backgroundColor: colors.background.secondary,
-    borderRadius: borderRadius.md,
+    borderRadius: 12,
     borderWidth: 1,
     borderColor: colors.border.light,
     paddingHorizontal: spacing.lg,
@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
   },
   userCard: {
     backgroundColor: colors.background.secondary,
-    borderRadius: borderRadius.md,
+    borderRadius: 12,
     padding: spacing.lg,
     marginBottom: spacing.sm,
     flexDirection: 'row',
@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
   userAvatar: {
     width: 44,
     height: 44,
-    borderRadius: borderRadius.full,
+    borderRadius: 9999,
     backgroundColor: colors.accent.glow,
     alignItems: 'center',
     justifyContent: 'center',

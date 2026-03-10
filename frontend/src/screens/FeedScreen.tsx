@@ -14,7 +14,7 @@ import {
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { colors, typography, spacing, screenPadding, borderRadius } from '../theme';
+import { colors, typography, spacing, screenPadding } from '../theme';
 import { PostCard } from '../components/PostCard';
 import { postsAPI } from '../api/posts';
 import { usersAPI } from '../api/users';

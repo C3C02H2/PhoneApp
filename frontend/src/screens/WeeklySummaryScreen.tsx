@@ -8,7 +8,7 @@ import {
   RefreshControl,
   ActivityIndicator,
 } from 'react-native';
-import { colors, typography, spacing, screenPadding, borderRadius } from '../theme';
+import { colors, typography, spacing, screenPadding } from '../theme';
 import { weeklyAPI, WeeklySummary } from '../api/weekly';
 import { EXCUSE_CATEGORIES } from '../types';
 
@@ -141,22 +141,22 @@ const styles = StyleSheet.create({
   subtitle: { ...typography.caption, color: colors.primary.disabled, marginBottom: spacing.xxl },
   emptyText: { ...typography.body, color: colors.primary.muted, textAlign: 'center', marginTop: 100 },
   insightCard: {
-    backgroundColor: colors.background.secondary, borderRadius: borderRadius.lg,
+    backgroundColor: colors.background.secondary, borderRadius: 16,
     padding: spacing.xl, borderLeftWidth: 4, borderLeftColor: colors.accent.main, marginBottom: spacing.xxl,
   },
   insightText: { ...typography.body, color: colors.primary.main, fontStyle: 'italic', lineHeight: 22 },
   weekBar: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: spacing.sm },
-  weekDot: { flex: 1, height: 28, borderRadius: borderRadius.sm, marginHorizontal: 2 },
+  weekDot: { flex: 1, height: 28, borderRadius: 8, marginHorizontal: 2 },
   weekLabels: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: spacing.xxl },
   weekLabel: { ...typography.caption, color: colors.primary.muted },
   percentCard: {
-    alignItems: 'center', backgroundColor: colors.background.secondary, borderRadius: borderRadius.lg,
+    alignItems: 'center', backgroundColor: colors.background.secondary, borderRadius: 16,
     padding: spacing.xxl, marginBottom: spacing.xxl, borderWidth: 1, borderColor: colors.border.subtle,
   },
   percentValue: { fontSize: 56, fontWeight: '800', color: colors.accent.main },
   percentLabel: { ...typography.body, color: colors.primary.muted, marginTop: spacing.xs },
   statsRow: {
-    flexDirection: 'row', backgroundColor: colors.background.secondary, borderRadius: borderRadius.lg,
+    flexDirection: 'row', backgroundColor: colors.background.secondary, borderRadius: 16,
     padding: spacing.xl, marginBottom: spacing.xxl, borderWidth: 1, borderColor: colors.border.subtle,
   },
   statItem: { flex: 1, alignItems: 'center' },
@@ -174,7 +174,7 @@ const styles = StyleSheet.create({
   moodRow: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm },
   moodChip: {
     backgroundColor: colors.background.secondary, paddingHorizontal: spacing.lg,
-    paddingVertical: spacing.sm, borderRadius: borderRadius.full, borderWidth: 1,
+    paddingVertical: spacing.sm, borderRadius: 9999, borderWidth: 1,
     borderColor: colors.border.subtle, flexDirection: 'row', gap: spacing.sm,
   },
   moodLabel: { ...typography.label, color: colors.primary.muted, textTransform: 'capitalize' },

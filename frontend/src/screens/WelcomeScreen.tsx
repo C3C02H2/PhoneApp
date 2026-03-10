@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { colors, typography, spacing, borderRadius } from '../theme';
+import { colors, typography, spacing } from '../theme';
 import { RootStackParamList } from '../types';
 
 type Props = {
@@ -99,12 +99,12 @@ const styles = StyleSheet.create({
 
   buttons: { width: '100%', gap: spacing.md },
   yesBtn: {
-    backgroundColor: colors.accent.main, borderRadius: borderRadius.lg, paddingVertical: 16,
+    backgroundColor: colors.accent.main, borderRadius: 16, paddingVertical: 16,
     alignItems: 'center',
   },
   yesBtnText: { fontSize: 17, fontWeight: '700', color: '#fff' },
   noBtn: {
-    borderWidth: 1, borderColor: colors.border.light, borderRadius: borderRadius.lg,
+    borderWidth: 1, borderColor: colors.border.light, borderRadius: 16,
     paddingVertical: 16, alignItems: 'center',
   },
   noBtnText: { fontSize: 17, fontWeight: '600', color: colors.primary.muted },

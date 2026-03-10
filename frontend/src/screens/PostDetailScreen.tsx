@@ -12,7 +12,7 @@ import {
   Alert,
 } from 'react-native';
 import { RouteProp, useRoute, useNavigation } from '@react-navigation/native';
-import { colors, typography, spacing, screenPadding, borderRadius } from '../theme';
+import { colors, typography, spacing, screenPadding } from '../theme';
 import { postsAPI } from '../api/posts';
 import { commentsAPI } from '../api/comments';
 import { Post, Comment as CommentType, FeedStackParamList } from '../types';
@@ -244,7 +244,7 @@ const styles = StyleSheet.create({
   avatar: {
     width: 44,
     height: 44,
-    borderRadius: borderRadius.full,
+    borderRadius: 9999,
     backgroundColor: colors.accent.glow,
     alignItems: 'center',
     justifyContent: 'center',
@@ -339,7 +339,7 @@ const styles = StyleSheet.create({
   deleteBtn: {
     paddingHorizontal: spacing.lg,
     paddingVertical: spacing.sm,
-    borderRadius: borderRadius.full,
+    borderRadius: 9999,
     borderWidth: 1,
     borderColor: colors.error.main,
   },

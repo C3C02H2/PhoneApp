@@ -10,7 +10,7 @@ import {
   Alert,
   RefreshControl,
 } from 'react-native';
-import { colors, typography, spacing, screenPadding, borderRadius, shadows } from '../theme';
+import { colors, typography, spacing, screenPadding, shadows } from '../theme';
 import { PrimaryButton } from '../components/PrimaryButton';
 import { goalsAPI } from '../api/goals';
 import { Goal } from '../types';
@@ -265,7 +265,7 @@ const styles = StyleSheet.create({
   },
   goalCard: {
     backgroundColor: colors.background.secondary,
-    borderRadius: borderRadius.lg,
+    borderRadius: 16,
     padding: spacing.xl,
     marginBottom: spacing.md,
     borderWidth: 1,
@@ -321,7 +321,7 @@ const styles = StyleSheet.create({
   },
   formCard: {
     backgroundColor: colors.background.secondary,
-    borderRadius: borderRadius.lg,
+    borderRadius: 16,
     padding: spacing.xl,
     marginTop: spacing.lg,
     borderWidth: 1,
@@ -334,7 +334,7 @@ const styles = StyleSheet.create({
   },
   input: {
     backgroundColor: colors.background.tertiary,
-    borderRadius: borderRadius.md,
+    borderRadius: 12,
     borderWidth: 1,
     borderColor: colors.border.light,
     paddingHorizontal: spacing.lg,

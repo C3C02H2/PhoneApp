@@ -10,7 +10,7 @@ import {
   Alert,
   RefreshControl,
 } from 'react-native';
-import { colors, typography, spacing, screenPadding, borderRadius } from '../theme';
+import { colors, typography, spacing, screenPadding } from '../theme';
 import { PrimaryButton } from '../components/PrimaryButton';
 import { weeklyTargetsAPI } from '../api/weeklyTargets';
 import { WeeklyTarget } from '../types';
@@ -259,7 +259,7 @@ const styles = StyleSheet.create({
   },
   targetCard: {
     backgroundColor: colors.background.secondary,
-    borderRadius: borderRadius.lg,
+    borderRadius: 16,
     padding: spacing.lg,
     marginBottom: spacing.md,
     borderWidth: 1,
@@ -307,7 +307,7 @@ const styles = StyleSheet.create({
     width: 50,
     height: 40,
     backgroundColor: colors.background.tertiary,
-    borderRadius: borderRadius.md,
+    borderRadius: 12,
     textAlign: 'center',
     fontSize: 16,
     fontWeight: '600',
@@ -323,7 +323,7 @@ const styles = StyleSheet.create({
   },
   formCard: {
     backgroundColor: colors.background.secondary,
-    borderRadius: borderRadius.lg,
+    borderRadius: 16,
     padding: spacing.xl,
     marginTop: spacing.lg,
     borderWidth: 1,
@@ -336,7 +336,7 @@ const styles = StyleSheet.create({
   },
   input: {
     backgroundColor: colors.background.tertiary,
-    borderRadius: borderRadius.md,
+    borderRadius: 12,
     borderWidth: 1,
     borderColor: colors.border.light,
     paddingHorizontal: spacing.lg,

@@ -13,7 +13,7 @@ import {
   ViewStyle,
   TextStyle,
 } from 'react-native';
-import { colors, typography, spacing, borderRadius } from '../theme';
+import { colors, typography, spacing } from '../theme';
 
 interface PrimaryButtonProps {
   title: string;
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
   base: {
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: borderRadius.md,
+    borderRadius: 12,
   },
 });
 

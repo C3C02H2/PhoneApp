@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { colors, typography, spacing, borderRadius } from '../theme';
+import { colors, typography, spacing } from '../theme';
 import { Comment } from '../types';
 import { timeAgo } from '../utils/timeAgo';
 
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
   avatar: {
     width: 28,
     height: 28,
-    borderRadius: borderRadius.full,
+    borderRadius: 9999,
     backgroundColor: colors.accent.glow,
     alignItems: 'center',
     justifyContent: 'center',
