@@ -198,7 +198,7 @@ const styles = StyleSheet.create({
 
   searchBtn: {
     backgroundColor: colors.accent.main,
-    borderRadius: borderRadius.lg,
+    borderRadius: 16,
     paddingVertical: spacing.lg,
     paddingHorizontal: spacing.xl,
     alignItems: 'center',

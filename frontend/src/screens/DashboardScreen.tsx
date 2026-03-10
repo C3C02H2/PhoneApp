@@ -10,7 +10,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { colors, typography, spacing, screenPadding, borderRadius } from '../theme';
+import { colors, typography, spacing, screenPadding } from '../theme';
 import { StatCard } from '../components/StatCard';
 import { statsAPI, DashboardData, Achievement } from '../api/stats';
 import { EXCUSE_CATEGORIES } from '../types';
@@ -163,7 +163,7 @@ const styles = StyleSheet.create({
   sectionTitle: { ...typography.h3, color: colors.primary.main, marginBottom: spacing.lg },
   consistencyRow: { flexDirection: 'row', gap: spacing.md },
   consistencyCard: {
-    flex: 1, backgroundColor: colors.background.secondary, borderRadius: borderRadius.lg,
+    flex: 1, backgroundColor: colors.background.secondary, borderRadius: 16,
     padding: spacing.xl, alignItems: 'center', borderWidth: 1, borderColor: colors.border.subtle,
   },
   consistencyValue: { ...typography.h2, color: colors.accent.main },
@@ -178,14 +178,14 @@ const styles = StyleSheet.create({
   moodRow: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm },
   moodChip: {
     backgroundColor: colors.background.secondary, paddingHorizontal: spacing.lg,
-    paddingVertical: spacing.sm, borderRadius: borderRadius.full, borderWidth: 1,
+    paddingVertical: spacing.sm, borderRadius: 9999, borderWidth: 1,
     borderColor: colors.border.subtle, flexDirection: 'row', gap: spacing.sm,
   },
   moodLabel: { ...typography.label, color: colors.primary.muted, textTransform: 'capitalize' },
   moodCount: { ...typography.label, color: colors.accent.main },
   achievementCard: {
     flexDirection: 'row', alignItems: 'center', backgroundColor: colors.background.secondary,
-    borderRadius: borderRadius.md, padding: spacing.lg, marginBottom: spacing.sm,
+    borderRadius: 12, padding: spacing.lg, marginBottom: spacing.sm,
     borderWidth: 1, borderColor: colors.border.subtle,
   },
   achievementLocked: { opacity: 0.5 },

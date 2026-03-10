@@ -12,7 +12,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { colors, typography, spacing, screenPadding, borderRadius } from '../theme';
+import { colors, typography, spacing, screenPadding } from '../theme';
 import { PrimaryButton } from '../components/PrimaryButton';
 import { TextInputField } from '../components/TextInputField';
 import { postsAPI } from '../api/posts';
@@ -224,7 +224,7 @@ const styles = StyleSheet.create({
   chip: {
     paddingHorizontal: spacing.lg,
     paddingVertical: spacing.sm,
-    borderRadius: borderRadius.full,
+    borderRadius: 9999,
     borderWidth: 1,
     borderColor: colors.border.light,
     backgroundColor: colors.background.tertiary,
@@ -240,7 +240,7 @@ const styles = StyleSheet.create({
   promptChip: {
     paddingHorizontal: spacing.lg,
     paddingVertical: spacing.md,
-    borderRadius: borderRadius.lg,
+    borderRadius: 16,
     borderWidth: 1,
     borderColor: colors.border.light,
     backgroundColor: colors.background.secondary,
@@ -266,7 +266,7 @@ const styles = StyleSheet.create({
   contentInput: {
     minHeight: 160,
     backgroundColor: colors.background.secondary,
-    borderRadius: borderRadius.md,
+    borderRadius: 12,
     borderWidth: 1,
     borderColor: colors.border.light,
     paddingHorizontal: spacing.lg,

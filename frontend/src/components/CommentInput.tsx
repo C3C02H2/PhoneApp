@@ -7,7 +7,7 @@ import {
   Text,
   ActivityIndicator,
 } from 'react-native';
-import { colors, typography, spacing, borderRadius } from '../theme';
+import { colors, typography, spacing } from '../theme';
 
 interface CommentInputProps {
   onSubmit: (content: string) => Promise<void>;
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     minHeight: 36,
     maxHeight: 100,
     backgroundColor: colors.background.tertiary,
-    borderRadius: borderRadius.lg,
+    borderRadius: 16,
     paddingHorizontal: spacing.lg,
     paddingVertical: spacing.sm,
     ...typography.body,
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
   },
   sendButton: {
     backgroundColor: colors.accent.main,
-    borderRadius: borderRadius.lg,
+    borderRadius: 16,
     paddingHorizontal: spacing.lg,
     paddingVertical: spacing.sm,
     justifyContent: 'center',

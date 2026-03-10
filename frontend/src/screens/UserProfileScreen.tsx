@@ -11,7 +11,7 @@ import {
   Alert,
 } from 'react-native';
 import { RouteProp, useRoute, useNavigation } from '@react-navigation/native';
-import { colors, typography, spacing, screenPadding, borderRadius } from '../theme';
+import { colors, typography, spacing, screenPadding } from '../theme';
 import { StatCard } from '../components/StatCard';
 import { usersAPI } from '../api/users';
 import { chatAPI } from '../api/chat';
@@ -314,7 +314,7 @@ const styles = StyleSheet.create({
   avatarLarge: {
     width: 80,
     height: 80,
-    borderRadius: borderRadius.full,
+    borderRadius: 9999,
     backgroundColor: colors.accent.glow,
     alignItems: 'center',
     justifyContent: 'center',
@@ -363,7 +363,7 @@ const styles = StyleSheet.create({
   followButton: {
     paddingHorizontal: spacing.xxxl,
     paddingVertical: spacing.md,
-    borderRadius: borderRadius.full,
+    borderRadius: 9999,
     backgroundColor: colors.accent.main,
     minWidth: 140,
     alignItems: 'center',
@@ -389,7 +389,7 @@ const styles = StyleSheet.create({
   chatButton: {
     paddingHorizontal: spacing.lg,
     paddingVertical: spacing.md,
-    borderRadius: borderRadius.full,
+    borderRadius: 9999,
     backgroundColor: colors.background.elevated,
     borderWidth: 1,
     borderColor: colors.accent.main,
@@ -404,7 +404,7 @@ const styles = StyleSheet.create({
   blockButton: {
     paddingHorizontal: spacing.lg,
     paddingVertical: spacing.md,
-    borderRadius: borderRadius.full,
+    borderRadius: 9999,
     backgroundColor: colors.error.main,
     minWidth: 100,
     alignItems: 'center',
@@ -433,7 +433,7 @@ const styles = StyleSheet.create({
   },
   infoCard: {
     backgroundColor: colors.background.secondary,
-    borderRadius: borderRadius.md,
+    borderRadius: 12,
     padding: spacing.lg,
     flexDirection: 'row',
     justifyContent: 'space-between',
