@@ -290,14 +290,14 @@ export const SettingsScreen: React.FC<{ navigation?: any }> = ({ navigation }) =
         <Text style={styles.groupLabel}>NOTIFICATIONS</Text>
         <View style={styles.group}>
           <Row
-            icon="\u23F0"
+            icon={'\u25A6'}
             label="Push Notifications"
             isToggle
             toggleValue={settings.notifications_enabled}
             onToggle={() => toggleSetting('notifications_enabled')}
           />
           <Row
-            icon="\u263C"
+            icon={'\u25C8'}
             label="Daily Reminder"
             isToggle
             toggleValue={settings.daily_reminder_enabled}
@@ -305,14 +305,14 @@ export const SettingsScreen: React.FC<{ navigation?: any }> = ({ navigation }) =
           />
           {settings.daily_reminder_enabled && (
             <Row
-              icon="\u231A"
+              icon={'\u2261'}
               label="Reminder Time"
               value={settings.daily_reminder_time}
               onPress={() => setDailyTimePickerVisible(true)}
             />
           )}
           <Row
-            icon="\u263D"
+            icon={'\u25CE'}
             label="Evening Reminder"
             isToggle
             toggleValue={settings.evening_reminder_enabled}
@@ -320,14 +320,14 @@ export const SettingsScreen: React.FC<{ navigation?: any }> = ({ navigation }) =
           />
           {settings.evening_reminder_enabled && (
             <Row
-              icon="\u231A"
+              icon={'\u2726'}
               label="Evening Time"
               value={settings.evening_reminder_time}
               onPress={() => setEveningTimePickerVisible(true)}
             />
           )}
           <Row
-            icon="\u2691"
+            icon={'\u2699'}
             label="Weekly Summary"
             isToggle
             toggleValue={settings.weekly_summary_enabled}
@@ -339,14 +339,14 @@ export const SettingsScreen: React.FC<{ navigation?: any }> = ({ navigation }) =
         <Text style={styles.groupLabel}>PREFERENCES</Text>
         <View style={styles.group}>
           <Row
-            icon="\u26BF"
+            icon={'\u25A6'}
             label="Private Profile"
             isToggle
             toggleValue={settings.is_private}
             onToggle={() => toggleSetting('is_private')}
           />
           <Row
-            icon="\u25A6"
+            icon={'\u25C8'}
             label="Post Anonymously by Default"
             isToggle
             toggleValue={settings.default_anonymous}
@@ -357,26 +357,26 @@ export const SettingsScreen: React.FC<{ navigation?: any }> = ({ navigation }) =
         {/* Account */}
         <Text style={styles.groupLabel}>ACCOUNT</Text>
         <View style={styles.group}>
-          <Row icon="\u270E" label="Username" value={user?.username || '\u2014'} onPress={() => setEditUsernameVisible(true)} />
-          <Row icon="\u2709" label="Email" value={user?.email?.split('@')[0] || '\u2014'} onPress={() => setEditEmailVisible(true)} />
-          <Row icon="\u26BF" label="Change Password" onPress={() => setPasswordVisible(true)} />
+          <Row icon={'\u2261'} label="Username" value={user?.username || '\u2014'} onPress={() => setEditUsernameVisible(true)} />
+          <Row icon={'\u25CE'} label="Email" value={user?.email?.split('@')[0] || '\u2014'} onPress={() => setEditEmailVisible(true)} />
+          <Row icon={'\u2726'} label="Change Password" onPress={() => setPasswordVisible(true)} />
         </View>
 
         {/* Privacy */}
         <Text style={styles.groupLabel}>PRIVACY</Text>
         <View style={styles.group}>
-          <Row icon="\u26D4" label="Blocked Users" onPress={() => navigation?.navigate('BlockedUsers')} />
+          <Row icon={'\u25A6'} label="Blocked Users" onPress={() => navigation?.navigate('BlockedUsers')} />
         </View>
 
         {/* Info */}
         <Text style={styles.groupLabel}>INFO</Text>
         <View style={styles.group}>
-          <Row icon="\u2139" label="Version" value="5.0.1" />
+          <Row icon={'\u25C8'} label="Version" value="5.0.1" />
         </View>
 
         {/* Actions */}
         <View style={[styles.group, { marginTop: spacing.xxl }]}>
-          <Row icon="\u2192" label="Log out" onPress={handleLogout} destructive />
+          <Row icon={'\u2261'} label="Log out" onPress={handleLogout} destructive />
         </View>
 
         <TouchableOpacity style={styles.deleteBtn} onPress={handleDeleteAccount} activeOpacity={0.7}>
