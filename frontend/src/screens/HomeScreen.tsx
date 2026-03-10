@@ -13,11 +13,13 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import { colors, typography, spacing, screenPadding, shadows } from '../theme';
 import { PrimaryButton } from '../components/PrimaryButton';
 import { StatCard } from '../components/StatCard';
 import { checkinsAPI } from '../api/checkins';
 import { goalsAPI } from '../api/goals';
+import { weeklyTargetsAPI } from '../api/weeklyTargets';
 import { useAuth } from '../hooks/useAuth';
 import {
   StreakResponse,
@@ -27,6 +29,7 @@ import {
   EXCUSE_CATEGORIES,
   MOOD_OPTIONS,
   DURATION_OPTIONS,
+  WeeklyTarget,
 } from '../types';
 
 const YES_MESSAGES = [
@@ -53,6 +56,8 @@ export const HomeScreen: React.FC = () => {
   const { user } = useAuth();
   const [streak, setStreak] = useState<StreakResponse | null>(null);
   const [goals, setGoals] = useState<Goal[]>([]);
+  const [weeklyTargets, setWeeklyTargets] = useState<WeeklyTarget[]>([]);
+  const [weeklyRangeLabel, setWeeklyRangeLabel] = useState('');
   const [loading, setLoading] = useState(true);
   const [checking, setChecking] = useState(false);
   const [refreshing, setRefreshing] = useState(false);
@@ -75,14 +80,29 @@ export const HomeScreen: React.FC = () => {
   const [excuseCategory, setExcuseCategory] = useState('');
   const [excuseDetail, setExcuseDetail] = useState('');
 
+  const navigation = useNavigation<any>();
+
+  const formatWeekRange = (start?: string, end?: string) => {
+    if (!start || !end) return '';
+    const s = new Date(start);
+    const e = new Date(end);
+    return `${s.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })} - ${e.toLocaleDateString(
+      'en-US',
+      { month: 'short', day: 'numeric', year: 'numeric' },
+    )}`;
+  };
+
   const fetchData = useCallback(async () => {
     try {
-      const [streakData, goalsData] = await Promise.all([
+      const [streakData, goalsData, weeklyData] = await Promise.all([
         checkinsAPI.getStreak(),
         goalsAPI.list(),
+        weeklyTargetsAPI.list(),
       ]);
       setStreak(streakData);
       setGoals(goalsData.goals);
+      setWeeklyTargets(weeklyData.targets);
+      setWeeklyRangeLabel(formatWeekRange(weeklyData.week_start, weeklyData.week_end));
     } catch (error) {
       console.error('Error fetching data:', error);
     } finally {
@@ -216,6 +236,42 @@ export const HomeScreen: React.FC = () => {
             <Text style={styles.messageText}>{showMessage}</Text>
           </Animated.View>
         )}
+
+        {/* Weekly targets preview */}
+        <View style={styles.weeklySection}>
+          <View style={styles.weeklyHeaderRow}>
+            <Text style={styles.weeklyTitle}>This week&apos;s targets</Text>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('ProfileTab', { screen: 'WeeklyTargets' })}
+              activeOpacity={0.7}
+            >
+              <Text style={styles.weeklyLinkText}>Set weekly targets {'\u203A'}</Text>
+            </TouchableOpacity>
+          </View>
+          {weeklyRangeLabel ? <Text style={styles.weeklySubtitle}>{weeklyRangeLabel}</Text> : null}
+
+          {weeklyTargets.length === 0 ? (
+            <Text style={styles.weeklyEmptyText}>No targets yet. Set up to 5 goals for this week.</Text>
+          ) : (
+            <View style={styles.weeklyList}>
+              {weeklyTargets.slice(0, 3).map((t) => (
+                <View key={t.id} style={styles.weeklyItem}>
+                  <Text style={styles.weeklyItemTitle} numberOfLines={1}>
+                    {t.title}
+                  </Text>
+                  <Text style={styles.weeklyItemProgress}>
+                    {t.current_count} / {t.target_count}
+                  </Text>
+                </View>
+              ))}
+              {weeklyTargets.length > 3 && (
+                <Text style={styles.weeklyMoreText}>
+                  + {weeklyTargets.length - 3} more in Weekly Targets
+                </Text>
+              )}
+            </View>
+          )}
+        </View>
 
         {/* Quote */}
         <View style={styles.quoteContainer}>
@@ -634,5 +690,58 @@ const styles = StyleSheet.create({
   modalButtons: {
     marginTop: spacing.xl,
     paddingBottom: spacing.lg,
+  },
+  weeklySection: {
+    paddingHorizontal: screenPadding.horizontal,
+    marginBottom: spacing.xxl,
+  },
+  weeklyHeaderRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: spacing.xs,
+  },
+  weeklyTitle: {
+    ...typography.h3,
+    color: colors.primary.main,
+  },
+  weeklyLinkText: {
+    ...typography.labelSmall,
+    color: colors.accent.main,
+  },
+  weeklySubtitle: {
+    ...typography.caption,
+    color: colors.primary.disabled,
+    marginBottom: spacing.sm,
+  },
+  weeklyEmptyText: {
+    ...typography.body,
+    color: colors.primary.muted,
+  },
+  weeklyList: {
+    marginTop: spacing.xs,
+  },
+  weeklyItem: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: spacing.sm,
+    borderBottomWidth: 1,
+    borderBottomColor: colors.border.subtle,
+  },
+  weeklyItemTitle: {
+    ...typography.body,
+    color: colors.primary.main,
+    flex: 1,
+    marginRight: spacing.sm,
+  },
+  weeklyItemProgress: {
+    ...typography.labelSmall,
+    color: colors.accent.main,
+  },
+  weeklyMoreText: {
+    ...typography.caption,
+    color: colors.primary.disabled,
+    marginTop: spacing.xs,
   },
 });
